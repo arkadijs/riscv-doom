@@ -154,11 +154,11 @@ cd gzdoom-3.88b/build/
 ./lzdoom -iwad doom2.wad \
   +fullscreen false \
   +r_polyrenderer false \
-  swtruecolor=false \
-  vid_defheight 360 \
-  vid_defwidth 640 \
-  vid_forcesurface true \
-  vid_renderer 0 \
+  +swtruecolor false \
+  +vid_defheight 360 \
+  +vid_defwidth 640 \
+  +vid_forcesurface true \
+  +vid_renderer 0 \
   +vid_fps true
 ```
 After first run put VARs into `~/.config/lzdoom/lzdoom.ini`.
