@@ -55,7 +55,7 @@ make && sudo make install
 2. **libSDL2**
 
 Get an SDL2 built with DirectDB support.
-[SDL-release-2.24.2.tar.gz](https://github.com/libsdl-org/SDL/archive/refs/tags/release-2.24.2.tar.gz)
+[SDL-release-2.26.1.tar.gz](https://github.com/libsdl-org/SDL/archive/refs/tags/release-2.26.1.tar.gz)
 ```
 CFLAGS="-g -O2 -pipe" CXXFLAGS="-g -O2 -pipe" ./configure \
   --disable-alsa-shared \
