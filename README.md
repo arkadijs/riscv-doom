@@ -2,6 +2,8 @@
 
 As D1 SOC has no 3D unit, getting modern port of Doom -- GZDoom or LZDoom requires some tinkering. Below are the steps for [Ubuntu](https://ubuntu.com/download/risc-v) to run LZDoom on [$30](https://www.aliexpress.com/item/1005004157984532.html) [RISC-V MQ-Pro board](https://mangopi.org/mqpro) in 640x360 resolution on Linux framebuffer (no X) with original 8-bit software renderer at 20~30fps. Truecolor and softpoly rendering works but at half the framerate. No audio so far.
 
+An alternative is to install `crispy-doom` package, but (a) you'd still need SDL2 build for KMSDRM video (below); and (b) [Crispy Doom](https://github.com/fabiangreffrath/crispy-doom) is slower than LZDoom, unless configured for 320x200.
+
 Someday there [will be native 2D](https://github.com/libsdl-org/SDL/issues/6570#issuecomment-1323154215) libSDL display output again.
 
 0. **Install development packages:**
@@ -33,17 +35,16 @@ built with [DRMKMS Dumb Buffers](https://github.com/JohnnyonFlame/SDL-dumbbuffer
 ```
 mkdir build && cd build
 cmake .. -DCMAKE_BUILD_TYPE=RelWithDebInfo \
-  -DSDL_STATIC=off \
-  -DSDL_X11=off \
-  -DSDL_VULKAN=off \
-  -DSDL_OFFSCREEN=off \
   -DSDL_DISKAUDIO=off \
   -DSDL_DUMMYAUDIO=off \
   -DSDL_DUMMYVIDEO=off \
   -DSDL_OFFSCREEN=off \
+  -DSDL_OPENGLES=off \
   -DSDL_OSS=off \
+  -DSDL_STATIC=off \
   -DSDL_VIRTUAL_JOYSTICK=off \
-  -DSDL_OPENGLES=off &&
+  -DSDL_VULKAN=off \
+  -DSDL_X11=off
 make && sudo make install && sudo ldconfig
 ```
 
