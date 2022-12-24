@@ -1,10 +1,8 @@
 ## Play Doom on RISC-V
 
-As D1 SOC has no 3D unit, getting modern port of Doom -- GZDoom or LZDoom requires some tinkering. Below are the steps for [Ubuntu](https://ubuntu.com/download/risc-v) to run LZDoom on [$30](https://www.aliexpress.com/item/1005004157984532.html) [RISC-V MQ-Pro board](https://mangopi.org/mqpro) in 640x480 resolution on Linux framebuffer (no X) with original 8-bit software renderer at 20fps. Truecolor and softpoly rendering works but at half the framerate. No audio so far.
+As D1 SOC has no 3D unit, getting modern port of Doom -- GZDoom or LZDoom requires some tinkering. Below are the steps for [Ubuntu](https://ubuntu.com/download/risc-v) to run LZDoom on [$30](https://www.aliexpress.com/item/1005004157984532.html) [RISC-V MQ-Pro board](https://mangopi.org/mqpro) in 640x480 resolution on Linux framebuffer (no X) with original 8-bit software renderer at 20+fps. Truecolor and softpoly rendering works but at half the framerate. No audio so far.
 
-An alternative is to install `crispy-doom` package, but (a) you'd still need SDL2 build for KMSDRM video (below); and (b) [Crispy Doom](https://github.com/fabiangreffrath/crispy-doom) is slower than LZDoom, unless configured for 320x200.
-
-Someday there [will be native 2D](https://github.com/libsdl-org/SDL/issues/6570#issuecomment-1323154215) libSDL display output again.
+An alternative is to install `crispy-doom` package, but (a) you'd still need SDL2 build for KMSDRM video (below); and (b) [Crispy Doom](https://github.com/fabiangreffrath/crispy-doom) is slower than LZDoom.
 
 0. **Install development packages:**
 ```
@@ -28,8 +26,11 @@ apt install -y \
 
 1. **libSDL2**
 
-Get an SDL2 [proof-of-concept](https://github.com/libsdl-org/SDL/issues/6570#issuecomment-1363905944)
+Someday there [will be native 2D](https://github.com/libsdl-org/SDL/issues/6570#issuecomment-1323154215) libSDL display output again.
+
+For now, get an SDL2 [proof-of-concept](https://github.com/libsdl-org/SDL/issues/6570#issuecomment-1363905944)
 built with [DRMKMS Dumb Buffers](https://github.com/JohnnyonFlame/SDL-dumbbuffers), written by João Henrique.
+
 
 [SDL2.zip](https://github.com/JohnnyonFlame/SDL-dumbbuffers/archive/refs/heads/SDL2.zip)
 ```
