@@ -1,8 +1,8 @@
 ## Play Doom on RISC-V
 
-As D1 SOC has no 3D unit, getting modern port of Doom -- GZDoom or LZDoom requires some tinkering. Below are the steps for [Ubuntu](https://ubuntu.com/download/risc-v) to run LZDoom on [$30](https://www.aliexpress.com/item/1005004157984532.html) [RISC-V MQ-Pro board](https://mangopi.org/mqpro) in 640x480 resolution on Linux framebuffer (no X) with original 8-bit software renderer at 20+fps. Truecolor and softpoly rendering works but at half the framerate. No audio so far.
+As D1 SOC has no 3D unit, getting modern port of Doom -- GZDoom or LZDoom requires some tinkering. Below are the steps for [Ubuntu](https://ubuntu.com/download/risc-v) to run LZDoom on [$30](https://www.aliexpress.com/item/1005004157984532.html) [RISC-V MQ-Pro board](https://mangopi.org/mqpro) in 640x480 resolution on Linux framebuffer (no X) with original 8-bit software renderer at 20+fps. Truecolor and softpoly rendering works but at half the framerate. Analog audio is via the [pads](https://mangopi.org/mqpro#spectification) on the bottom side of the [board](https://linux-sunxi.org/MangoPi_MQ-Pro). No I2S audio so far.
 
-An alternative is to install `crispy-doom` package, but (a) you'd still need SDL2 build for KMSDRM video (below); and (b) [Crispy Doom](https://github.com/fabiangreffrath/crispy-doom) is slower than LZDoom.
+An alternative is to install `crispy-doom` package, but (a) you'd still need SDL2 build for KMSDRM video (below); and (b) [Crispy Doom](https://github.com/fabiangreffrath/crispy-doom) is slower than LZDoom (unless run with `-nosound` to double the framerates).
 
 0. **Install development packages:**
 ```
