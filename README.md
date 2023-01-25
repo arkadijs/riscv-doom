@@ -64,8 +64,6 @@ and/or [audio pads](https://github.com/arkadijs/linux/commit/db268af4aad66f87056
 Or download [sun20i-d1-mangopi-mq-pro.dtb](https://github.com/arkadijs/riscv-doom/raw/main/sun20i-d1-mangopi-mq-pro.dtb) from here, then
 edit `/boot/grub/grub.cfg` to set `devicetree /boot/sun20i-d1-mangopi-mq-pro.dtb`.
 
-You could use any cheap [TI PCM510x](https://www.aliexpress.com/item/1005002898278583.html) or ES7148/ES7134 DAC which AliExpress is full of.
-
 3. **LZDoom**
 
 Build LZDoom as is. The build must be optimized - `Release` or `RelWithDebInfo`. Pure debug build segfaults.
@@ -97,6 +95,8 @@ cd gzdoom-3.88b/build/
 ```
 After first run put VARs into `~/.config/lzdoom/lzdoom.ini`. `snd_samplerate 48000` is for I2S sound (only), or try `-nosound`.
 
+For I2S try any cheap [TI PCM510x](https://www.aliexpress.com/item/1005002898278583.html) or ES7148/ES7134 DAC which AliExpress is full of.
+
 5. **Crispy Doom**
 
 `crispy-doom` package is fine but it's missing FluidSynth support.
@@ -119,7 +119,7 @@ cd master/build/
 Edit `~/.local/share/crispy-doom/crispy-doom.cfg`:
 
 ```
-snd_samplerate     48000
+snd_samplerate     12000
 fluidsynth_sf_path "/home/ubuntu/doom/sf2/gzdoom.sf2"
 ```
 
