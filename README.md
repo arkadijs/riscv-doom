@@ -120,6 +120,7 @@ Edit `~/.local/share/crispy-doom/crispy-doom.cfg`:
 
 ```
 snd_samplerate     12000
+snd_dmxoption      ""
 fluidsynth_sf_path "/home/ubuntu/doom/sf2/gzdoom.sf2"
 ```
 
