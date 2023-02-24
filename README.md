@@ -119,6 +119,8 @@ cd master/build/
 Edit `~/.local/share/crispy-doom/crispy-doom.cfg`:
 
 ```
+aspect_ratio_correct 1
+
 snd_samplerate     12000
 snd_dmxoption      ""
 fluidsynth_sf_path "/home/ubuntu/doom/sf2/gzdoom.sf2"
