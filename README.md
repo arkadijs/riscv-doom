@@ -34,7 +34,7 @@ Someday there [will be native 2D](https://github.com/libsdl-org/SDL/issues/6570#
 For now, get an SDL2 [proof-of-concept](https://github.com/libsdl-org/SDL/issues/6570#issuecomment-1363905944)
 built with [DRMKMS Dumb Buffers](https://github.com/JohnnyonFlame/SDL-dumbbuffers), written by João Henrique.
 
-[SDL2.zip](https://github.com/JohnnyonFlame/SDL-dumbbuffers/archive/refs/heads/SDL2.zip)
+[SDL2.zip](https://github.com/arkadijs/SDL-dumbbuffers/archive/refs/heads/SDL2.zip)
 ```
 cd SDL2/
 mkdir build && cd build
