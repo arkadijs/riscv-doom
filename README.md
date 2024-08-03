@@ -37,8 +37,7 @@ built with [DRMKMS Dumb Buffers](https://github.com/JohnnyonFlame/SDL-dumbbuffer
 [SDL2.zip](https://github.com/arkadijs/SDL-dumbbuffers/archive/refs/heads/SDL2.zip)
 ```
 cd SDL2/
-mkdir build && cd build
-cmake .. -DCMAKE_BUILD_TYPE=RelWithDebInfo \
+cmake -B build -DCMAKE_BUILD_TYPE=RelWithDebInfo \
   -DSDL_DISKAUDIO=off \
   -DSDL_DUMMYAUDIO=off \
   -DSDL_DUMMYVIDEO=off \
@@ -49,7 +48,8 @@ cmake .. -DCMAKE_BUILD_TYPE=RelWithDebInfo \
   -DSDL_VIRTUAL_JOYSTICK=off \
   -DSDL_VULKAN=off \
   -DSDL_X11=off
-make && sudo make install && sudo ldconfig
+cmake --build build && sudo cmake --install build
+sudo ldconfig
 ```
 
 2. **Config**
@@ -71,9 +71,8 @@ Build LZDoom as is. The build must be optimized - `Release` or `RelWithDebInfo`.
 [gzdoom-3.88b.tar.gz](https://github.com/drfrag666/gzdoom/archive/refs/tags/3.88b.tar.gz)
 ```
 cd gzdoom-3.88b/
-mkdir build && cd build
-cmake .. -DCMAKE_BUILD_TYPE=RelWithDebInfo
-make
+cmake -B build -DCMAKE_BUILD_TYPE=RelWithDebInfo
+cmake --build build && sudo cmake --install build
 ```
 It will take some time.
 
@@ -81,8 +80,7 @@ It will take some time.
 
 Get some WADs, put into a folder, set `export DOOMWADDIR=$HOME/doom/wads`.
 ```
-cd gzdoom-3.88b/build/
-./lzdoom -iwad doom2.wad \
+lzdoom -iwad doom2.wad \
   +fullscreen false \
   +r_polyrenderer false \
   +swtruecolor false \
@@ -104,9 +102,8 @@ For I2S try any cheap [TI PCM510x](https://www.aliexpress.com/item/1005002898278
 [master.zip](https://github.com/fabiangreffrath/crispy-doom/archive/refs/tags/master.zip)
 ```
 cd master/
-mkdir build && cd build
-cmake .. -DCMAKE_BUILD_TYPE=RelWithDebInfo
-make crispy-doom
+cmake -B build -DCMAKE_BUILD_TYPE=RelWithDebInfo
+cmake --build build --target crispy-doom
 ```
 
 Run and exit to create initial config:
